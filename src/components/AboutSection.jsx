@@ -1,0 +1,116 @@
+import { Briefcase, Code, User } from "lucide-react";
+import { Link } from "react-scroll";
+
+export const AboutSection = () => {
+  const handleDownload = (e) => {
+    e.preventDefault();
+    const choice = window.prompt("Do you want to download the resume?(1) or view it in a new tab?(2) \n Enter 1 or 2:");
+    if (choice === '1') {
+      const link = document.createElement('a');
+      link.href = '/Resume.pdf';
+      link.download = 'Resume.pdf';
+      document.body.appendChild(link);
+      link.click();
+      document.body.removeChild(link);
+    } else if (choice === '2') {
+      window.open('/Resume.pdf', '_blank');
+    } else {
+      alert('Invalid choice. Please enter 1 or 2.');
+    }
+  };
+
+  return (
+    <section id="about" className="py-12 md:py-20 lg:py-24 px-4 md:px-6 lg:px-8 relative">
+      <div className="container mx-auto max-w-5xl">
+        <h2 className="text-2xl sm:text-3xl md:text-4xl font-bold mb-8 text-center">
+          About <span className="text-shimmer"> Me</span>
+        </h2>
+
+        <div className="grid grid-cols-1 md:grid-cols-2 gap-12 items-center">
+          <div className="space-y-6">
+            <h3 className="text-xl sm:text-2xl font-semibold text-gradient">
+              Full Stack Web Developer & Lifelong Learner
+            </h3>
+
+            <p className="text-muted-foreground">
+              I specialize in building full-stack web applications using modern technologies, with a strong focus on performance, scalability, and user experience.
+            </p>
+
+            <p className="text-muted-foreground">
+              Alongside development, I actively strengthen my problem-solving skills through Data Structures & Algorithms while consistently working on projects and improving my craft.
+            </p>
+
+            <div className="flex flex-col sm:flex-row gap-4 pt-4 justify-center sm:justify-start">
+              <Link
+                to="contact"
+                smooth={true}
+                duration={600}
+                className="cosmic-button cursor-pointer"
+              >
+                Get In Touch
+              </Link>
+
+
+              <a
+                href="/Resume.pdf"
+                target="_blank"
+                className="px-6 py-2 rounded-full border border-primary text-primary hover:bg-primary/10 transition-colors duration-300"
+                download={false}
+                onClick={(e) => { handleDownload(e); }}
+              >
+                Resume
+              </a>
+            </div>
+          </div>
+
+          <div className="grid grid-cols-1 gap-6">
+            <div className="gradient-border p-6 card-hover border border-primary">
+              <div className="flex items-start gap-4">
+                <div className="p-3 rounded-full bg-primary/10">
+                  <Code className="h-6 w-6 text-primary" />
+                </div>
+                <div className="text-left">
+                  <h4 className="font-semibold text-lg">Full Stack Development</h4>
+                  <p className="text-muted-foreground">
+                    Building scalable web apps from frontend to backend using
+                    modern frameworks and tools.
+                  </p>
+                </div>
+              </div>
+            </div>
+
+            <div className="gradient-border p-6 card-hover border border-primary">
+              <div className="flex items-start gap-4">
+                <div className="p-3 rounded-full bg-primary/10">
+                  <User className="h-6 w-6 text-primary" />
+                </div>
+                <div className="text-left">
+                  <h4 className="font-semibold text-lg">DSA & Consistency</h4>
+                  <p className="text-muted-foreground">
+                    Strengthening problem-solving through DSA while staying
+                    consistent in daily learning and coding.
+                  </p>
+                </div>
+              </div>
+            </div>
+
+            <div className="gradient-border p-6 card-hover border border-primary">
+              <div className="flex items-start gap-4">
+                <div className="p-3 rounded-full bg-primary/10">
+                  <Briefcase className="h-6 w-6 text-primary" />
+                </div>
+                <div className="text-left">
+                  <h4 className="font-semibold text-lg">Project & Time Management</h4>
+                  <p className="text-muted-foreground">
+                    Managing projects efficiently while balancing productivity
+                    and time management for consistent progress.
+                  </p>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+  );
+};
