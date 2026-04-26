@@ -58,8 +58,8 @@ This website highlights my projects, skills, and journey as a developer, combine
 ### Clone and Run
 
 ```bash
-git clone https://github.com/VashuJain2024/React-Portfolio-Vashu-Jain.git
-cd React-Portfolio-Vashu-Jain
+git clone https://github.com/RohanJha17/rohanjha-dev-portfolio.git
+cd rohanjha-dev-portfolio
 npm install
 npm run dev
 ``` 
