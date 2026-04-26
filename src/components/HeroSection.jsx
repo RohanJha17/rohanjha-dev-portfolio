@@ -23,7 +23,7 @@ export const HeroSection = () => {
     >
       <div className="container max-w-5xl mx-auto text-center z-10 flex gap-8 md:gap-12 lg:gap-20 flex-col md:flex-row items-center md:items-center py-20 md:py-24 lg:py-32 justify-center">
         <div className="space-y-6">
-          <h1 className="text-2xl md:text-6xl font-bold tracking-tight">
+          <h1 className="text-6xl font-bold tracking-tight">
             <motion.span
               initial={{ opacity: 0, y: 20 }}
               animate={{ opacity: 1, y: 0 }}
