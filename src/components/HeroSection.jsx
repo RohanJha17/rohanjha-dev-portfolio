@@ -28,7 +28,7 @@ export const HeroSection = () => {
               initial={{ opacity: 0, y: 20 }}
               animate={{ opacity: 1, y: 0 }}
               transition={{ duration: 0.5 }}
-              className="block sm:inline"
+              className="block"
             >
               Hi, I'm
             </motion.span>
